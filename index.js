@@ -1,4 +1,6 @@
 import express from "express";
+import session from "express-session";
+import passport from "./auth/passport.js";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -17,6 +19,15 @@ const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
 
 import indexRouter from "./routes/indexRouter.js";
+
+app.use(
+  session({ secret: "78902507", resave: false, saveUninitialized: false })
+);
+app.use(passport.session());
+app.use((req, res, next) => {
+  res.locals.currentUser = req.user;
+  next();
+});
 
 app.use("/", indexRouter);
 

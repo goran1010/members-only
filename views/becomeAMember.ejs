@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Become a Member | The Forum</title>
+  </head>
+  <body>
+    <% if (currentUser) { %>
+    <form action="/become-member" method="post">
+      <p>
+        In order to become a member of our exclusive club you need to type in
+        the SECRET phrase. Good luck!
+      </p>
+      <div>
+        <label for="phrase">Phrase is: </label><input type="text" id="phrase" />
+      </div>
+    </form>
+    <% } else {%>
+    <p>
+      You can't become an exclusive member of our club without first registering
+      and logging in.
+    </p>
+    <p>
+      Go back to <a href="/">Home Page</a> and register - if you haven't
+      already, and log in!
+    </p>
+    <% } %>
+  </body>
+</html>
