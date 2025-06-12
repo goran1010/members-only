@@ -55,11 +55,12 @@
       </div>
       <div><button type="submit">Log in !</button></div>
     </form>
-    <% } %>
+    <% } if (currentUser && !currentUser.is_member) { %>
     <p>
       Would you like to become a member of our exclusive club and receive
       special privileges ? Click this link:
       <a href="/become-member">become a member</a> !
     </p>
+    <% } %>
   </body>
 </html>
