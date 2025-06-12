@@ -6,6 +6,11 @@
     <title>Home - Member | The Forum</title>
   </head>
   <body>
-    <%- include("header") %>
+    <%- include("header") %> <% allMessages.map((message) => { %>
+    <h2><%= message.title %></h2>
+    <p><%= message.text %></p>
+    <p><%= message.date_created %></p>
+    <p><%= message.full_name %></p>
+    <% }) %>
   </body>
 </html>
