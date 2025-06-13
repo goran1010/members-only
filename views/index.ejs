@@ -3,12 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="main.js" defer></script>
+
     <title>Home | The Forum</title>
   </head>
   <body>
     <%- include("header") %> <% allMessages.map((message) => { %>
-    <h2><%= message.title %></h2>
-    <p><%= message.text %></p>
+    <div class="message-card">
+      <h2><%= message.title %></h2>
+      <p><%= message.text %></p>
+    </div>
     <% }) %>
   </body>
 </html>

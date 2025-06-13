@@ -1,23 +1,23 @@
 {
-  "name": "express-template",
+  "name": "members-only",
   "version": "1.0.0",
-  "description": "",
+  "description": "Members only project for TOP",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/goran1010/express-template.git"
+    "url": "git+https://github.com/goran1010/members-only"
   },
   "type": "module",
   "keywords": [],
-  "author": "",
+  "author": "Goran Jovic",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/goran1010/express-template/issues"
+    "url": "https://github.com/goran1010/members-only/issues"
   },
-  "homepage": "https://github.com/goran1010/express-template#readme",
+  "homepage": "https://github.com/goran1010/members-only#readme",
   "dependencies": {
     "bcryptjs": "^3.0.2",
     "connect-pg-simple": "^10.0.0",
