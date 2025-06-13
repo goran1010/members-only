@@ -9,6 +9,8 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 const COOKIE_SECRET = process.env.COOKIE_SECRET;
+import flash from "connect-flash";
+app.use(flash());
 
 app.use(express.urlencoded({ extended: true }));
 

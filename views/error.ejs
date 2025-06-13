@@ -1,0 +1,13 @@
+<% if (locals.errors && errors.length > 0) { %>
+<ul class="alert alert-danger">
+  <% errors.forEach(error => { %>
+  <li><%= error.msg %></li>
+  <% }) %>
+</ul>
+<% } %> <% if (locals.error && error.length > 0) { %>
+<ul class="alert">
+  <% error.forEach(err => { %>
+  <li><%= err %></li>
+  <% }) %>
+</ul>
+<% } %>

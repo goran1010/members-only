@@ -8,15 +8,23 @@
     <title>Become a Member | The Forum</title>
   </head>
   <body>
-    <% if (currentUser) { %>
+    <% if (errors && errors.length > 0) { %>
+    <ul class="alert alert-danger">
+      <% errors.forEach(error => { %>
+      <li><%= error %></li>
+      <% }) %>
+    </ul>
+    <% } %> <% if (currentUser) { %>
     <form action="/become-member" method="post">
       <p>
         In order to become a member of our exclusive club you need to type in
         the SECRET phrase. Good luck!
       </p>
       <div>
-        <label for="phrase">Phrase is: </label><input type="text" id="phrase" />
+        <label for="phrase">Phrase is: </label
+        ><input type="text" id="phrase" name="phrase" />
       </div>
+      <button type="submit">Check the phrase</button>
     </form>
     <% } else {%>
     <p>

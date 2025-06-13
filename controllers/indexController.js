@@ -6,5 +6,10 @@ export default async function indexController(req, res) {
     res.render("index-admin", { allMessages });
   } else if (req.user && req.user.is_member) {
     res.render("index-member", { allMessages });
-  } else res.render("index", { allMessages });
+  } else
+    res.render("index", {
+      allMessages,
+      errors: req.flash("errors"),
+      error: req.flash("error"),
+    });
 }

@@ -7,16 +7,17 @@ import becomeMemberPost from "../controllers/becomeMemberPost.js";
 import createMessageController from "../controllers/createMessageController.js";
 import deleteMessageController from "../controllers/deleteMessageController.js";
 import isAdmin from "../auth/isAdmin.js";
+import isLoggedIn from "../auth/isLoggedIn.js";
 
 indexRouter.get("/", indexController);
 
 indexRouter.get("/delete-message", isAdmin, deleteMessageController);
 
-indexRouter.get("/become-member", becomeMemberController);
+indexRouter.get("/become-member", isLoggedIn, becomeMemberController);
 
-indexRouter.post("/become-member", becomeMemberPost);
+indexRouter.post("/become-member", isLoggedIn, becomeMemberPost);
 
-indexRouter.post("/create-message", createMessageController);
+indexRouter.post("/create-message", isLoggedIn, createMessageController);
 
 indexRouter.use("/users", usersRouter);
 

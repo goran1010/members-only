@@ -5,7 +5,7 @@ dotenv.config();
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 
 export default async function createNewUser(req, res, next, hashedPassword) {
-  const full_name = `${req.body.firstname} ${req.body.lastname}`;
+  const full_name = `${req.body.first_name} ${req.body.last_name}`;
   let is_admin = false;
   if (req.body.password_admin === ADMIN_PASSWORD && req.body.admin)
     is_admin = true;
