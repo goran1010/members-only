@@ -9,11 +9,14 @@
     <title>Home | The Forum</title>
   </head>
   <body>
-    <%- include("header") %> <% allMessages.map((message) => { %>
-    <div class="message-card">
-      <h2><%= message.title %></h2>
-      <p><%= message.text %></p>
-    </div>
-    <% }) %>
+    <%- include("header") %>
+    <main>
+      <% allMessages.map((message) => { %>
+      <div class="message-card">
+        <h2><%= message.title %></h2>
+        <p><%= message.text %></p>
+      </div>
+      <% }) %>
+    </main>
   </body>
 </html>

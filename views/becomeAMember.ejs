@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="main.js" defer></script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="member.css" />
     <title>Become a Member | The Forum</title>
   </head>
   <body>
     <% if (errors && errors.length > 0) { %>
-    <ul class="alert alert-danger">
+    <div class="alert">
       <% errors.forEach(error => { %>
-      <li><%= error %></li>
+      <p><%= error %></p>
       <% }) %>
-    </ul>
-    <% } %> <% if (currentUser) { %>
-    <form action="/become-member" method="post">
+    </div>
+    <% } %>
+    <form action="/become-member" method="post" class="become-member-page">
       <p>
         In order to become a member of our exclusive club you need to type in
         the SECRET phrase. Good luck!
@@ -23,18 +24,9 @@
       <div>
         <label for="phrase">Phrase is: </label
         ><input type="text" id="phrase" name="phrase" />
+        <button type="submit">Check the phrase</button>
       </div>
-      <button type="submit">Check the phrase</button>
+      <p>Or you can go back to <a href="/">Home Page</a></p>
     </form>
-    <% } else {%>
-    <p>
-      You can't become an exclusive member of our club without first registering
-      and logging in.
-    </p>
-    <p>
-      Go back to <a href="/">Home Page</a> and register - if you haven't
-      already, and log in!
-    </p>
-    <% } %>
   </body>
 </html>
