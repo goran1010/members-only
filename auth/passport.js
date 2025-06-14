@@ -28,7 +28,7 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser(async (id, done) => {
-  if (!user) {
+  if (!locals.user) {
   return done(new Error("User not found")); 
 }
   try {
