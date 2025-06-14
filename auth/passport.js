@@ -28,6 +28,9 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser(async (id, done) => {
+  if (!user) {
+  return done(new Error("User not found")); 
+}
   try {
     const { rows } = await pool.query("SELECT * FROM users WHERE id = $1", [
       id,
