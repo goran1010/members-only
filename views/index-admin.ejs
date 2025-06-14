@@ -8,19 +8,24 @@
     <title>Home - Admin | The Forum</title>
   </head>
   <body>
-    <%- include("header") %>
+    <% if(locals.successMsg && successMsg.length > 0) { %>
+    <div class="success"><%= successMsg[0] %></div>
+    <% } %> <%- include("header") %>
     <main>
-      <% allMessages.map((message) => { %>
-      <div class="message-card">
-        <h2><%= message.title %></h2>
-        <p><%= message.text %></p>
-        <p><%= message.date_created %></p>
-        <p><%= message.full_name %></p>
-        <a href="/delete-message?message_id=<%= message.message_id %>"
-          >Delete this message</a
-        >
+      <h3>All messages</h3>
+      <div class="cards">
+        <% if (allMessages) { %> <% allMessages.map((message) => { %>
+        <div class="message-card">
+          <h2><%= message.title %></h2>
+          <p><%= message.text %></p>
+          <p><%= message.date_created %></p>
+          <p><%= message.full_name %></p>
+          <a href="/delete-message?message_id=<%= message.message_id %>"
+            >Delete this message</a
+          >
+        </div>
+        <% }) %> <% } %>
       </div>
-      <% }) %>
     </main>
   </body>
 </html>

@@ -14,6 +14,7 @@ const createNewUserController = [
       }
       const hashedPassword = await bcrypt.hash(req.body.password, 10);
       await createNewUser(req, res, next, hashedPassword);
+      req.flash("success", "User created successfully.");
       res.redirect("/");
     } catch (error) {
       console.error(error);

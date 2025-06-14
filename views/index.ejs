@@ -9,14 +9,19 @@
     <title>Home | The Forum</title>
   </head>
   <body>
-    <%- include("header") %>
+    <% if(successMsg.length > 0) { %>
+    <div class="success"><%= successMsg[0] %></div>
+    <% } %> <%- include("header") %>
     <main>
-      <% allMessages.map((message) => { %>
-      <div class="message-card">
-        <h2><%= message.title %></h2>
-        <p><%= message.text %></p>
+      <h3>All messages</h3>
+      <div class="cards">
+        <% if (allMessages) { %> <% allMessages.map((message) => { %>
+        <div class="message-card">
+          <h2><%= message.title %></h2>
+          <p><%= message.text %></p>
+        </div>
+        <% }) %> <% } %>
       </div>
-      <% }) %>
     </main>
   </body>
 </html>

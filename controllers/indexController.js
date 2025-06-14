@@ -11,5 +11,6 @@ export default async function indexController(req, res) {
       allMessages,
       errors: req.flash("errors"),
       error: req.flash("error"),
+      successMsg: req.flash("success"),
     });
 }
